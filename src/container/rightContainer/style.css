@@ -1,0 +1,46 @@
+.card {
+    cursor: pointer;
+    position: relative;
+    align-items: center;
+    width: 60vw;
+    height: 70vh;
+    margin-left: 2.5rem;
+    margin-top: 1.25rem;
+    font-size: 2rem; 
+    display: flex;
+    justify-content: center;
+    padding: 1.25rem;
+    transition: transform 0.3s;
+    background-color: white;
+    transform-style: preserve-3d;  
+    perspective: 1000px;
+    transform: rotateX(var(--rotate-x,0)) translateX(var(--translate-x,0))
+}
+
+.card.flip {
+    --rotate-x: 180deg;
+    transition: transform 600ms;
+}
+
+ .front, 
+.back {
+    padding: 1.25rem;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+.next .back {
+    transform: rotateY(180deg)
+}
+
+.card .back {
+    transform: rotateX(180deg);
+}
+
+.changePage {
+    display:flex;
+    justify-content:center;
+    margin-top: 0.6rem;
+    color: #3ccfcf;
+}

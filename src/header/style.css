@@ -1,0 +1,33 @@
+.header {
+    width: 100wh;
+    display: flex;
+    font-size: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding-bottom: 0.4rem;
+    /* position: fixed; */
+}
+
+.headerLeft {
+    display: flex; 
+    flex-wrap: wrap;
+    align-items: center;
+}
+ .title {
+    color:blue;
+    font-weight: 800;
+    margin-right: 1.25rem;
+    margin-left: 1.25rem;
+    font-size: 1.5rem;
+}
+.headerItem {
+    margin-right: 1.25rem;
+    margin-left: 1.25rem;
+    font-weight: 500;
+}
+
+.headerRight {
+    display: flex;
+    align-items: center;
+}

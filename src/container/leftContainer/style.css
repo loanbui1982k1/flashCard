@@ -1,0 +1,25 @@
+.leftContainer {
+    width: 20vw;
+    box-shadow: 0 0.25rem 1.25rem rgb(0 0 0 / 8%);
+    height: 100%;
+    font-weight: 500;
+    left: 0.6rem;
+    position: relative;
+}
+
+.leftTitle {
+    padding: 1.25rem;
+    position: absolute;
+    top: 6.25rem;
+    width: 60%;
+}
+
+.progressBar {
+    margin-top: 1.8rem;
+    width: 100%;
+}
+
+.progress {
+    display: flex;
+    justify-content: space-between;
+}
