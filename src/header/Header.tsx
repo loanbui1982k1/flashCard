@@ -15,6 +15,8 @@ import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import Avatar from '@mui/material/Avatar';
 import { deepOrange} from '@mui/material/colors';
+import MenuOpenIcon from '@mui/icons-material/MenuOpen';
+import CloseIcon from '@mui/icons-material/Close';
 
 const StyledMenu = styled((props: MenuProps) => (
   <Menu
@@ -62,6 +64,7 @@ const StyledMenu = styled((props: MenuProps) => (
 export default function Header() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+  const [openMenu, setOpenMenu] = React.useState(false)
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
@@ -72,11 +75,12 @@ export default function Header() {
   return (
     <div className="header">
       <div className="title">Quizlet</div>
-      <div className="headerLeft">
-        {/* <div className="title">Quizlet</div> */}
+      <div className= {`headerLeft ${openMenu ? 'open' :''}`}>
+        <div className = 'closeMenu' onClick={() => setOpenMenu(false)}><CloseIcon/></div>
         <div className="headerItem">Trang chủ</div>
         <div className="headerItem">Giải thích</div>
         <div className="headerItem">Thư viện của bạn</div>
+        <div className="headerItem profile">Profile</div> 
         <div className="headerItem">
           <Button
             id="demo-customized-button"
@@ -122,8 +126,8 @@ export default function Header() {
             p: "2px 4px",
             display: "flex",
             alignItems: "center",
-            width: '30vw',
-            maxWidth: '300px',
+            width: '250px',
+            maxWidth: '70vh',
             backgroundColor: "#f6f7fb",
           }}
         >
@@ -137,7 +141,12 @@ export default function Header() {
             inputProps={{ "aria-label": "Học phần, sách giáo khoa" }}
           />
         </Paper>
-        <Avatar className = 'headerItem' sx={{ bgcolor: deepOrange[500] }}>L</Avatar>
+        <div className = 'menuOpen' onClick={() => setOpenMenu(true)}>
+        <IconButton>
+          <MenuOpenIcon fontSize = 'large'/>
+        </IconButton>
+        </div>
+        <Avatar className = 'headerItem avatar' sx={{ bgcolor: deepOrange[500] }}>L</Avatar>
       </div>
     </div>
   );

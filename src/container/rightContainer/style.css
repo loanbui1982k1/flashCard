@@ -2,7 +2,7 @@
     cursor: pointer;
     position: relative;
     align-items: center;
-    width: 60vw;
+    width: 70vw;
     height: 70vh;
     margin-left: 2.5rem;
     margin-top: 1.25rem;
@@ -44,3 +44,11 @@
     margin-top: 0.6rem;
     color: #3ccfcf;
 }
+
+@media screen and (max-width: 450px) {
+    .card {
+        width: 80vw;
+        height: 60vh;
+        margin: 1rem auto;
+    }
+  }

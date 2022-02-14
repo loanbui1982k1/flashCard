@@ -23,3 +23,18 @@
     display: flex;
     justify-content: space-between;
 }
+
+@media screen and (max-width: 450px) {
+    .leftContainer {
+        width: 100vw;
+        height: 10vh;
+        left: 0;
+        padding-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .leftTitle {
+        top: 0;     
+    }
+}

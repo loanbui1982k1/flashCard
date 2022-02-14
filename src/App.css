@@ -19,10 +19,17 @@
   html {
     font-size: 14px;
   }
+
 }
 
 @media screen and (min-width: 1024px) {
   html {
     font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .container {
+    display: block;
   }
 }

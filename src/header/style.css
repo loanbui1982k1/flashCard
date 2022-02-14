@@ -31,3 +31,50 @@
     display: flex;
     align-items: center;
 }
+
+@media screen and (min-width: 1024px) {
+    .headerItem.profile, .menuOpen, .closeMenu {
+        display: none;
+    }
+  }
+
+@media screen and (max-width: 1023px) {
+    .headerItem.avatar {
+        display: none;
+    }
+
+    .menuOpen {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    .headerLeft {
+        display: none;
+    }
+    .closeMenu {
+        text-align: right;
+    }
+    .headerLeft.open {
+        display: block;
+        background: rgb(250, 245, 245);
+        position: fixed;
+        right: 0;
+        align-items: center;
+        top: 0;
+        padding: 2rem;
+        z-index: 1;
+        min-width: 300px;
+        height: 100vh;
+    }
+
+    .headerItem {
+        margin: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .headerLeft.open {
+        width: 90vw;
+        padding-left: 10vw;
+    }
+  }

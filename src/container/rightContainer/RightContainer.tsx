@@ -17,7 +17,6 @@ interface Props {
 
  const RightContainer: React.FC<Props> = (props) => {
     const [status, setStatus] = React.useState(false)
-    const [changePage, setChangePage] = React.useState(false)
   return (
     <div >
         <div className = {`card ${status? 'flip': ''}`} onClick = {()=>setStatus(!status)}
