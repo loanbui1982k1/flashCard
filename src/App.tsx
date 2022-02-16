@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import Header from './header/Header'
 import LeftContainer from './container/leftContainer/LeftContainer'
 import RightContainer from './container/rightContainer/RightContainer'
+import {Provider} from './context/ProgressContext'
 
 interface card {
   question: string,
@@ -14,8 +15,6 @@ interface card {
 //             answer: 'stomach'}, {question: 'The __________ is the beginning of the digestive system.', answer: 'mouth'}]
 
 const App: React.FC = () => {
-  const [numberCard, setNumberCard] = useState(1)
-  const changeCard = (numberCard: number) => setNumberCard(numberCard + 1)
   const listCards: card[] = [
     {
       question: 'The ______________ releases acids and enzymes that digest food. They pyloric sphincter allows food to travel from the ______________ to the large intestine.',
@@ -36,16 +35,18 @@ const App: React.FC = () => {
     }
   ]
   return (
+    <Provider>
     <div className="App">
       <header>
         <Header />
       </header>
       <div className='container'>
-        <LeftContainer numberCard={numberCard} totalCards={listCards.length} />
-        <RightContainer cards={listCards} numberCard={numberCard - 1} changeCard={changeCard} />
+        <LeftContainer totalCards={listCards.length} />
+        <RightContainer cards={listCards} />
       </div>
       {/* <Card/> */}
     </div>
+    </Provider>
   );
 }
 
